@@ -1,28 +1,83 @@
-import React, { ReactElement } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { ReactElement, useState } from 'react';
+import {
+  TouchableWithoutFeedback,
+  KeyboardAvoidingView,
+  Keyboard,
+  Text,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../../styles/themes';
 import { Switch } from 'react-native';
 
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+
 import { SignInrops } from './props';
 
-import { Container, Title } from './styles';
+import {
+  Container,
+  ContainerSubtitle,
+  ContainerTitle,
+  Subtitle,
+  Title,
+  ContainerInputs,
+  ContainerTextResetPassword,
+  TextResetPassword,
+} from './styles';
+import { View } from 'react-native';
+
+function HidePassword(): ReactElement {
+  return (
+    <View>
+      <Text>oioiasdasdoioioiooi</Text>
+    </View>
+  );
+}
 
 export default function SignIn({}: SignInrops): ReactElement {
   const theme = useTheme();
   const navigation = useNavigation();
 
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
-    <Container>
-      <Button title="Entrar" onPress={() => navigation.navigate('Home')} />
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <Container>
+        <ContainerTitle>
+          <Title>Olá,</Title>
+        </ContainerTitle>
 
-      <Text>Chama nois chupeta</Text>
-      <Text style={{ fontSize: 32 }}>Troca a cor ai</Text>
+        <ContainerSubtitle>
+          <Subtitle>Logue por e-mail</Subtitle>
+        </ContainerSubtitle>
 
-      <Switch
+        <ContainerInputs>
+          <Input
+            value={username}
+            onChangeTex={setUserName}
+            placeholder="Digite aqui seu e-email"
+          />
+
+          <Input
+            value={password}
+            onChangeText={setPassword}
+            placeholder="Digite aqui sua senha"
+            isPassword={<HidePassword />}
+          />
+        </ContainerInputs>
+
+        <ContainerTextResetPassword>
+          <TextResetPassword>Esqueci minha senha</TextResetPassword>
+        </ContainerTextResetPassword>
+
+        <Button title="Acessar" onPress={() => {}} />
+
+        {/* <Switch
         value={theme.mode === 'dark'}
         onValueChange={(value) => theme.setMode(value ? 'dark' : 'light')}
-      />
-    </Container>
+      /> */}
+      </Container>
+    </TouchableWithoutFeedback>
   );
 }

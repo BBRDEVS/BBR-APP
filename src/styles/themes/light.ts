@@ -1,6 +1,6 @@
 const light = {
   theme: {
-    background: '#ededed',
+    background: '#FFF',
     border: '#bdbdbd',
     backgroundAlt: '#eaeaeb',
     borderAlt: '#bdbdbd',
