@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
-import Home from '../pages/Home/Home';
+import Home from '../core/ui/pages/Home';
 
 const Stack = createNativeStackNavigator();
 
