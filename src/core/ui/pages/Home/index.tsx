@@ -7,9 +7,6 @@ import { Styles } from './styles';
 
 import LeassonsCarrouselComponent from 'core/ui/components/LeassonsCarrousel';
 
-
-const BANNER_MOCK_LEASSSON = '../../assets/images/banners_leassons/banner_leasson_1.svg';
-
 const leassons = [
   {id: 1, title: 'Food and Drink', category: 'Food', url_image: 'https://picsum.photos/200/300', active: true},
   {id: 2, title: 'Hobies', category: 'Vacations', url_image: 'https://picsum.photos/200/300', active: false},
@@ -20,6 +17,8 @@ const leassons = [
 export default function Home({}: HomeProps): ReactElement {
   return (
     <View style={Styles.container}>
+      <Text>Olá, Usuário</Text>
+      <Text>Estudo por frases</Text>
       <LeassonsCarrouselComponent items={leassons} />
       
     </View>
