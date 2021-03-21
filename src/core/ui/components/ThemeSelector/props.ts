@@ -1,6 +1,4 @@
-import { TouchableOpacityProps } from 'react-native';
-
-export interface ThemeSelectorProps extends TouchableOpacityProps {
+export interface ThemeSelectorProps {
     theme: string;
     number: number;
     icon: string;
