@@ -13,7 +13,8 @@ export default function LeassonsCarrouselComponent({
         <ScrollView
             style={{
                 marginTop: 15,
-                marginBottom: 25
+                marginBottom: 25,
+                marginLeft: 10
             }}
             horizontal={true}
             showsHorizontalScrollIndicator={false}

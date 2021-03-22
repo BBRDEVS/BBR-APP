@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
-
-import { Container } from './styles';
+import { Container, Content, UserName, TitleCategory, Scroll } from './styles';
 
 import LeassonsCarrouselComponent from 'core/ui/components/LeassonsCarrousel';
 import ThemeSelectorComponent from 'core/ui/components/ThemeSelector';
@@ -19,13 +17,26 @@ const leassons = [
 export default function HomeContainer(): ReactElement {
     return (
         <Container>
-            <View style={{ flex: 1}}>
-                <Text>Olá, Usuário</Text>
-                <Text>Estudo por frases</Text>
-                <LeassonsCarrouselComponent items={leassons} />
+            <Content>
+                <UserName>Olá, Usuário</UserName>
+                <TitleCategory>Estudo por frases</TitleCategory>
+            </Content>
+            <LeassonsCarrouselComponent items={leassons} />
+            <Content>
+                <TitleCategory>Estudo por frases</TitleCategory>
+            </Content>
+            <Scroll>
+                {/* @TODO - Aplicar os icones e listagem de temas corretos */}
                 <ThemeSelectorComponent theme="Food & Drink" number={1} icon="hamburger" />
-                <ThemeSelectorComponent theme="Languages & Country" number={2} icon="globe-americas" />
-            </View>
+                <ThemeSelectorComponent theme="Other Theme" number={2} icon="globe-americas" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="trash" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="copy" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="paste" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
+                <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
+            </Scroll>
+
             <MenuComponent />
         </Container>
     );

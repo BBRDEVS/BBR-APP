@@ -5,14 +5,13 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  height: 60px;
   width: 100%;
   padding-left: 23px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   background: #fff;
-  box-shadow: 10px 0 0 ${colors.black};
+  box-shadow: 0px -3px 10px #ececec;
 `;
 
 export const ItemMenu = styled.TouchableOpacity`

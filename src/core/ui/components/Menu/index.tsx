@@ -16,25 +16,23 @@ export default function MenuComponent({ }): ReactElement {
         console.log('active route@:', route.name)
     }, [])
     return (
-        <SafeAreaView>
-            <Container>
-            <ItemMenu>
-                <Icon name="home" size={25} color={route.name === 'Home' ? colors.blueSecondary : colors.black} />
-                <Text style={{ color: route.name === 'Home' ? colors.blueSecondary : colors.black }}>Home</Text>
-            </ItemMenu>
-            <ItemMenu>
-                <Icon name="comments" size={25} color={route.name === 'Chat' ? colors.blueSecondary : colors.black} />
-                <Text style={{ color: route.name === 'Chat' ? colors.blueSecondary : colors.black }}>Chat</Text>
-            </ItemMenu>
-            <ItemMenu>
-                <Icon name="star" size={25} color={route.name === 'Revisao' ? colors.blueSecondary : colors.black} />
-                <Text style={{ color: route.name === 'Revisao' ? colors.blueSecondary : colors.black }}>Revisão</Text>
-            </ItemMenu>
-            <ItemMenu>
-                <Icon name="bell" size={25} color={route.name === 'Notificacao' ? colors.blueSecondary : colors.black} />
-                <Text style={{ color: route.name === 'Notificacao' ? colors.blueSecondary : colors.black }}>Notificação</Text>
-            </ItemMenu>
-        </Container>
-        </SafeAreaView>
+        <Container>
+        <ItemMenu>
+            <Icon name="home" size={25} color={route.name === 'Home' ? colors.blueSecondary : colors.black} />
+            <Text style={{ color: route.name === 'Home' ? colors.blueSecondary : colors.black }}>Home</Text>
+        </ItemMenu>
+        <ItemMenu>
+            <Icon name="comments" size={25} color={route.name === 'Chat' ? colors.blueSecondary : colors.black} />
+            <Text style={{ color: route.name === 'Chat' ? colors.blueSecondary : colors.black }}>Chat</Text>
+        </ItemMenu>
+        <ItemMenu>
+            <Icon name="star" size={25} color={route.name === 'Revisao' ? colors.blueSecondary : colors.black} />
+            <Text style={{ color: route.name === 'Revisao' ? colors.blueSecondary : colors.black }}>Revisão</Text>
+        </ItemMenu>
+        <ItemMenu>
+            <Icon name="bell" size={25} color={route.name === 'Notificacao' ? colors.blueSecondary : colors.black} />
+            <Text style={{ color: route.name === 'Notificacao' ? colors.blueSecondary : colors.black }}>Notificação</Text>
+        </ItemMenu>
+    </Container>
     );
 }
