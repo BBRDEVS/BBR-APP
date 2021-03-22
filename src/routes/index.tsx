@@ -26,7 +26,13 @@ export default function AppRoutes(): ReactElement {
         })}
         component={Introduction}
       />
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen 
+        name="Home"
+        options={{
+          headerShown: false
+        }}
+        component={Home} 
+      />
     </Stack.Navigator>
   );
 }

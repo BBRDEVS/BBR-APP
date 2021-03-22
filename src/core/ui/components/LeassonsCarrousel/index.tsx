@@ -12,9 +12,9 @@ export default function LeassonsCarrouselComponent({
     return (
         <ScrollView
             style={{
-                paddingLeft: 15,
                 marginTop: 15,
-                marginBottom: 25
+                marginBottom: 25,
+                marginLeft: 10
             }}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
@@ -22,7 +22,7 @@ export default function LeassonsCarrouselComponent({
         >
             {
                 items.map((leasson: LeassonItem) =>
-                    <ItemCarrousel>
+                    <ItemCarrousel key={leasson.id}>
                         <Container onPress={() => console.log('CLICADO NO ITEM' + leasson.id)}>
                             <Image source={{ uri: leasson.url_image }} style={{ width: 253, height: 162, borderRadius: 8, opacity: leasson.active === true ? 1 : 0.2 }} />
                             <ContainerText style={{ opacity: leasson.active === true ? 1 : 0.2 }}>
