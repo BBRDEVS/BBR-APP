@@ -47,7 +47,7 @@ export default function SignIn({}: SignInrops): ReactElement {
         <ContainerInputs>
           <Input
             value={username}
-            onChangeTex={setUserName}
+            onChangeText={setUserName}
             placeholder="Digite aqui seu e-email"
           />
 
