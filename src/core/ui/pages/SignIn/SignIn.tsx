@@ -63,7 +63,10 @@ export default function SignIn({}: SignInrops): ReactElement {
           <TextResetPassword>Esqueci minha senha</TextResetPassword>
         </ContainerTextResetPassword>
 
-        <Button title="Acessar" onPress={() => navigation.navigate('Home')} />
+        <Button
+          title="Acessar"
+          onPress={() => navigation.navigate('MainHomeNavigation')}
+        />
 
         {/* <Switch
         value={theme.mode === 'dark'}
