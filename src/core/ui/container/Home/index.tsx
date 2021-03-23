@@ -67,8 +67,6 @@ export default function HomeContainer(): ReactElement {
         <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
         <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
       </Scroll>
-
-      <MenuComponent />
     </Container>
   );
 }
