@@ -7,9 +7,10 @@ import { ButtonProps } from './props';
 export default function ButtonComponent({
   onPress,
   title,
+  enabled,
 }: ButtonProps): ReactElement {
   return (
-    <Button onPress={onPress}>
+    <Button onPress={onPress} enabled={enabled}>
       <TextButton>{title}</TextButton>
     </Button>
   );

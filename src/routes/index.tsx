@@ -17,7 +17,17 @@ const Tab = createBottomTabNavigator();
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" options={headerShownFalse} component={Home} />
+      <Stack.Screen
+        name="Home"
+        options={({ route }) => ({
+          title: `Ola Luis`,
+          cardOverlayEnabled: true,
+          headerTintColor: '#09164F',
+          headerStyle: { backgroundColor: '#FFF' },
+          headerLeft: () => null,
+        })}
+        component={Home}
+      />
       <Stack.Screen
         name="Introduction"
         options={({ navigation, route }) => ({

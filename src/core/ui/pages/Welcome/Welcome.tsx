@@ -15,8 +15,6 @@ import {
   Men,
   ContainerTitle,
   Title,
-  ContainerSubTitle,
-  SubTitle,
   TextHi,
 } from './styles';
 
@@ -37,15 +35,12 @@ export default function Welcome(): ReactElement {
 
         <ContainerTitle>
           <Title>Muitos estudam Inglês, no B.Br você vai falar!</Title>
-
-          <Title>Vamos lá?</Title>
         </ContainerTitle>
 
-        <ContainerSubTitle>
-          <SubTitle>Avance e comece já!</SubTitle>
-        </ContainerSubTitle>
-
-        <Button title="Seguir" onPress={() => navigation.navigate('SignIn')} />
+        <Button
+          title="Vamos lá"
+          onPress={() => navigation.navigate('SignIn')}
+        />
       </Container>
     </SafeAreaView>
   );

@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
-import { Container, Content, UserName, TitleCategory, Scroll } from './styles';
+import { FlatList } from 'react-native';
+import { Container, Content, TitleCategory } from './styles';
 
 import LeassonsCarrouselComponent from 'core/ui/components/LeassonsCarrousel';
 import ThemeSelectorComponent from 'core/ui/components/ThemeSelector';
-import MenuComponent from 'core/ui/components/Menu';
 
 // it will be received by API
 const leassons = [
@@ -37,36 +37,63 @@ const leassons = [
   },
 ];
 
+const selectTheme = [
+  {
+    id: 1,
+    theme: 'titulo da bagaça',
+    icon: 'hamburger',
+    number: 1,
+  },
+  {
+    id: 2,
+    theme: 'titulo da bagaça',
+    icon: 'hamburger',
+    number: 2,
+  },
+  {
+    id: 3,
+    theme: 'titulo da bagaça',
+    icon: 'hamburger',
+    number: 3,
+  },
+  {
+    id: 4,
+    theme: 'titulo da bagaça',
+    icon: 'hamburger',
+    number: 4,
+  },
+  {
+    id: 5,
+    theme: 'titulo da bagaça',
+    icon: 'hamburger',
+    number: 5,
+  },
+];
+
 export default function HomeContainer(): ReactElement {
   return (
     <Container>
       <Content>
-        <UserName>Olá, Usuário</UserName>
         <TitleCategory>Estudo por frases</TitleCategory>
+        <LeassonsCarrouselComponent items={leassons} />
       </Content>
-      <LeassonsCarrouselComponent items={leassons} />
       <Content>
         <TitleCategory>Estudo por frases</TitleCategory>
       </Content>
-      <Scroll>
-        {/* @TODO - Aplicar os icones e listagem de temas corretos */}
-        <ThemeSelectorComponent
-          theme="Food & Drink"
-          number={1}
-          icon="hamburger"
-        />
-        <ThemeSelectorComponent
-          theme="Other Theme"
-          number={2}
-          icon="globe-americas"
-        />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="trash" />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="copy" />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="paste" />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
-        <ThemeSelectorComponent theme="Other Theme" number={3} icon="sync" />
-      </Scroll>
+
+      <FlatList
+        style={{ flex: 1 }}
+        data={selectTheme}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <ThemeSelectorComponent
+            theme={item.theme}
+            number={item.number}
+            icon={item.icon}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+      />
     </Container>
   );
 }
