@@ -32,14 +32,3 @@ export const Title = styled.Text`
   font-size: 30px;
   text-align: center;
 `;
-
-export const ContainerSubTitle = styled.View`
-  margin-top: 15px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-`;
-
-export const SubTitle = styled.Text`
-  font-size: 20px;
-`;

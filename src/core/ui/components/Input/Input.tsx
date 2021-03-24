@@ -1,18 +1,24 @@
-import React, { ReactElement } from 'react';
-import { InputProps } from './props';
+import React, { ReactElement, ComponentProps } from 'react';
+import { TextInput } from 'react-native';
+import { useField } from 'formik';
 
-import { InputText } from './styles';
+const Input = (props: ComponentProps<typeof TextInput>): ReactElement => {
+  const [field] = useField(props.name);
 
-export default function Input({
-  onChangeText,
-  placeholder,
-  value,
-}: InputProps): ReactElement {
   return (
-    <InputText
-      onChangeText={onChangeText}
-      placeholder={placeholder}
-      value={value}
+    <TextInput
+      style={{
+        borderWidth: 2,
+        borderColor: '#161a20',
+        width: '100%',
+        marginTop: 20,
+        padding: 10,
+        borderRadius: 16,
+      }}
+      {...props}
+      value={field.value}
     />
   );
-}
+};
+
+export default Input;

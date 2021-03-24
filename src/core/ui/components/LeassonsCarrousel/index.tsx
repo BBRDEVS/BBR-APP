@@ -4,8 +4,7 @@ import { FlatList } from 'react-native';
 import { Container, TextLeasson, ContainerText, ItemCarrousel } from './styles';
 
 import { LeassonsCarrouselProps, LeassonItem } from './props';
-import { Image, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { Image } from 'react-native';
 
 export default function LeassonsCarrouselComponent({
   items,
