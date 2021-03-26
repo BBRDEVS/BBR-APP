@@ -1,18 +1,41 @@
-import React, { ReactElement } from 'react';
+import React, { createRef, ReactElement } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from '../core/ui/pages/Home';
+import Home from '../core/ui/container/Home';
 import Introduction from '../core/ui/pages/Introduction';
 import SignIn from '../core/ui/pages/SignIn';
 import Welcome from '../core/ui/pages/Welcome';
+import Chat from '../core/ui/pages/Chat';
 
 import { headerShownFalse } from './styles';
-import { useHiddenTabs } from 'core/ui/hooks/useHiddenTabs';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+export const navigationRef = createRef();
+
+export function navigate(name: string, params?: object) {
+  navigationRef.current?.navigate(name, params);
+}
+
+const ChatStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Chat"
+        options={({ route }) => ({
+          cardOverlayEnabled: true,
+          headerTintColor: '#09164F',
+          headerStyle: { backgroundColor: '#FFF' },
+          headerLeft: () => null,
+        })}
+        component={Chat}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const HomeStackNavigator = () => {
   return (
@@ -52,6 +75,7 @@ function MainBottomNavigator(): ReactElement {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeStackNavigator} />
+      <Tab.Screen name="Chat" component={ChatStackNavigator} />
     </Tab.Navigator>
   );
 }

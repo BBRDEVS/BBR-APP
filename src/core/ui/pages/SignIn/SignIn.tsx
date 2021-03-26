@@ -1,8 +1,10 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import { TouchableWithoutFeedback, Keyboard, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FormikProvider, useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import { AuthContext } from '../../../data/context/AuthContext';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
