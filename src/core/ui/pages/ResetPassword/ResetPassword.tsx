@@ -1,7 +1,7 @@
-import React, { ReactElement, useCallback } from 'react';
+import React, { ReactElement } from 'react';
 import { TouchableWithoutFeedback, Keyboard, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { FormikProvider, useFormik } from 'formik';
+import { FormikProvider, useFormik, MyFormValues } from 'formik';
 import * as Yup from 'yup';
 
 import { AuthContext } from '../../../data/context/AuthContext';
@@ -9,7 +9,7 @@ import { AuthContext } from '../../../data/context/AuthContext';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { SignInrops } from './props';
+import { ResetPasswordProps } from './props';
 
 import {
   Container,
@@ -18,32 +18,24 @@ import {
   Subtitle,
   Title,
   ContainerInputs,
-  ContainerTextResetPassword,
-  TextResetPassword,
   ErrorText,
 } from './styles';
 
-export default function SignIn({}: SignInrops): ReactElement {
+export default function ResetPassword({}: ResetPasswordProps): ReactElement {
   const navigation = useNavigation();
 
   const formik = useFormik({
-    initialValues: { email: 'email@email.com', password: 'senha' },
+    initialValues: { email: 'email@teste.com' },
 
     validationSchema: Yup.object().shape({
-      email: Yup.string().required('Email é obrigatório'),
-      password: Yup.string().required('Senha é obrigatório'),
+      email: Yup.string().required('Digite seu email'),
     }),
 
     onSubmit: (values) => {
       console.log(values);
-      navigation.navigate('MainHomeNavigation');
+      navigation.navigate('SignIn');
     },
   });
-
-  const navigateToResetPassword = useCallback(
-    () => navigation.navigate('ResetPasswordNavigation'),
-    [],
-  );
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -53,7 +45,7 @@ export default function SignIn({}: SignInrops): ReactElement {
         </ContainerTitle>
 
         <ContainerSubtitle>
-          <Subtitle>Logue por e-mail</Subtitle>
+          <Subtitle>Recuperar Senha</Subtitle>
         </ContainerSubtitle>
 
         <ContainerInputs>
@@ -63,33 +55,18 @@ export default function SignIn({}: SignInrops): ReactElement {
               placeholder="Digite aqui seu e-email"
               onChangeText={formik.handleChange('email')}
               value={formik.values.email}
-              returnKeyType="next"
+              returnKeyType="send"
             />
+
             {formik.touched.email && formik.errors.email && (
               <ErrorText>{formik.errors.email}</ErrorText>
-            )}
-
-            <Input
-              name="password"
-              placeholder="Digite aqui sua senha"
-              onChangeText={formik.handleChange('password')}
-              value={formik.values.password}
-              secureTextEntry
-            />
-
-            {formik.touched.password && formik.errors.password && (
-              <ErrorText>{formik.errors.password}</ErrorText>
             )}
           </FormikProvider>
         </ContainerInputs>
 
         <View style={{ marginTop: 20 }}>
-          <Button title="Acessar" onPress={formik.handleSubmit} />
+          <Button title="Recuperar" onPress={formik.handleSubmit} />
         </View>
-
-        <ContainerTextResetPassword onPress={navigateToResetPassword}>
-          <TextResetPassword>Esqueci minha senha</TextResetPassword>
-        </ContainerTextResetPassword>
       </Container>
     </TouchableWithoutFeedback>
   );

@@ -3,10 +3,12 @@ import { TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Welcome from '../core/ui/pages/Welcome';
+import SignIn from '../core/ui/pages/SignIn';
+import ResetPassword from '../core/ui/pages/ResetPassword';
+
 import Home from '../core/ui/container/Home';
 import Introduction from '../core/ui/pages/Introduction';
-import SignIn from '../core/ui/pages/SignIn';
-import Welcome from '../core/ui/pages/Welcome';
 import Chat from '../core/ui/pages/Chat';
 
 import { headerShownFalse } from './styles';
@@ -99,6 +101,12 @@ export default function AppRoutes(): ReactElement {
         name="MainHomeNavigation"
         options={headerShownFalse}
         component={MainBottomNavigator}
+      />
+
+      <Stack.Screen
+        options={{ title: '' }}
+        name="ResetPasswordNavigation"
+        component={ResetPassword}
       />
     </Stack.Navigator>
   );
