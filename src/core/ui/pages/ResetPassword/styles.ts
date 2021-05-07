@@ -6,9 +6,7 @@ export const Container = styled.View`
   padding: 32px;
 `;
 
-export const ContainerTitle = styled.View`
-  margin-top: 15px;
-`;
+export const ContainerTitle = styled.View``;
 
 export const Title = styled.Text`
   font-size: 24px;
