@@ -8,7 +8,7 @@ import { ChatProps } from './props';
 export default function Chat({}: ChatProps): ReactElement {
   return (
     <Container>
-      <Text>Text</Text>
+      <Text>Chat</Text>
     </Container>
   );
 }
