@@ -23,6 +23,7 @@ export const ContainerSubtitle = styled.View`
 export const Subtitle = styled.Text`
   color: #161a20;
   font-size: 16px;
+  font-weight: bold;
 `;
 
 export const ContainerInputs = styled.View``;

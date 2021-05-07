@@ -41,7 +41,7 @@ export default function ResetPassword({}: ResetPasswordProps): ReactElement {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Container>
         <ContainerTitle>
-          <Title>Olá,</Title>
+          <Title>Olá, 👋🏻</Title>
         </ContainerTitle>
 
         <ContainerSubtitle>

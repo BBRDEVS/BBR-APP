@@ -10,7 +10,9 @@ export const ContainerLogo = styled.View``;
 
 export const Logo = styled.Image``;
 
-export const ContainerMen = styled.View`
+export const ContainerMen = styled.ImageBackground`
+  width: 300px;
+  height: 300px;
   justify-content: center;
   align-items: center;
 `;
@@ -18,8 +20,10 @@ export const ContainerMen = styled.View`
 export const Men = styled.Image``;
 
 export const TextHi = styled.Text`
-  left: 80px;
-  top: 20px;
+  left: 86px;
+  bottom: 105px;
+  font-size: 24px;
+  font-weight: bold;
 `;
 
 export const ContainerTitle = styled.View`

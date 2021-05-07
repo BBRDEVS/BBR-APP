@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { TouchableWithoutFeedback, Keyboard, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FormikProvider, useFormik } from 'formik';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../../data/context/AuthContext';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+//import Loading from '../../components/Loading';
 
 import { SignInrops } from './props';
 
@@ -25,6 +26,7 @@ import {
 
 export default function SignIn({}: SignInrops): ReactElement {
   const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: { email: 'email@email.com', password: 'senha' },
@@ -36,6 +38,7 @@ export default function SignIn({}: SignInrops): ReactElement {
 
     onSubmit: (values) => {
       console.log(values);
+
       navigation.navigate('MainHomeNavigation');
     },
   });
@@ -49,7 +52,7 @@ export default function SignIn({}: SignInrops): ReactElement {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Container>
         <ContainerTitle>
-          <Title>Olá,</Title>
+          <Title>Olá, 👋🏻</Title>
         </ContainerTitle>
 
         <ContainerSubtitle>
