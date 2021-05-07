@@ -1,10 +1,11 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 import colors from '../../styles/colors';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.white};
-  padding: 32px;
+  padding: ${Platform.OS === 'ios' ? 32 : 0}px;
 `;
 
 export const Content = styled.View`
