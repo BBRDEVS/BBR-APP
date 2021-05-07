@@ -1,10 +1,8 @@
 import React, { ReactElement } from 'react';
 import { FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 import { Container, Content, TitleCategory } from './styles';
 
-import LeassonsCarrouselComponent from 'core/ui/components/LeassonsCarrousel';
 import ThemeSelectorComponent from 'core/ui/components/ThemeSelector';
 
 // it will be received by API
@@ -72,30 +70,17 @@ const selectTheme = [
   },
 ];
 
-export default function HomeContainer(): ReactElement {
+export default function LessionSelector(): ReactElement {
   const navigation = useNavigation();
 
   return (
     <Container>
       <Content>
-        <TitleCategory>Estudo por frases</TitleCategory>
-        <FlatList
-          data={leassons}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <LeassonsCarrouselComponent
-              onPress={() => navigation.navigate('LessionSelector', {})}
-              item={item}
-            />
-          )}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
+        <TitleCategory>
+          Veja quais são lições disponíveis para que você
+        </TitleCategory>
       </Content>
 
-      <Content>
-        <TitleCategory>Estudo por frases</TitleCategory>
-      </Content>
       <FlatList
         style={{ flex: 1 }}
         data={selectTheme}
@@ -105,7 +90,7 @@ export default function HomeContainer(): ReactElement {
             theme={item.theme}
             number={item.number}
             icon={item.icon}
-            onPress={() => navigation.navigate('LessionSelector')}
+            onPress={() => navigation.navigate('Introduction')}
           />
         )}
         showsVerticalScrollIndicator={false}
