@@ -7,6 +7,10 @@ import SignIn from '../core/ui/pages/SignIn';
 import ResetPassword from '../core/ui/pages/ResetPassword';
 
 import LessionSelector from '../core/ui/pages/LessionSelector';
+import RevisionSelector from '../core/ui/pages/RevisionSelector';
+import RevisionCorretionSelector from '../core/ui/pages/RevisionCorretionSelector';
+import RevisionCorretionTestSelector from '../core/ui/pages/RevisionCorretionTestSelector';
+import CheckRevision from '../core/ui/pages/CheckRevision';
 
 import { headerShownFalse } from './styles';
 
@@ -73,6 +77,87 @@ export default function AppRoutes(): ReactElement {
         })}
         name="LessionSelector"
         component={LessionSelector}
+      />
+
+      <Stack.Screen
+        options={({ navigation }) => ({
+          title: 'Food And Drink',
+          cardStyle: { backgroundColor: '#FFF' },
+          headerStyle: { shadowColor: 'transparent' },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => navigation.navigate('Revision')}>
+              <Image
+                source={require('../../src/core/ui/assets/images/arrow-back-black.png')}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        name="RevisionSelector"
+        component={RevisionSelector}
+      />
+
+      <Stack.Screen
+        options={({ navigation }) => ({
+          title: 'Food And Drink',
+          cardStyle: { backgroundColor: '#FFF' },
+          headerStyle: { shadowColor: 'transparent' },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => navigation.navigate('RevisionSelector')}>
+              <Image
+                source={require('../../src/core/ui/assets/images/arrow-back-black.png')}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        name="RevisionCorretionSelector"
+        component={RevisionCorretionSelector}
+      />
+
+      <Stack.Screen
+        options={({ navigation }) => ({
+          title: 'Food And Drink',
+          cardStyle: { backgroundColor: '#FFF' },
+          headerStyle: { shadowColor: 'transparent' },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => navigation.navigate('RevisionCorretionSelector')}>
+              <Image
+                source={require('../../src/core/ui/assets/images/arrow-back-black.png')}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        name="RevisionCorretionTestSelector"
+        component={RevisionCorretionTestSelector}
+      />
+
+      <Stack.Screen
+        options={({ navigation }) => ({
+          title: '',
+          cardStyle: { backgroundColor: '#06397D' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            backgroundColor: '#06397D',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => navigation.navigate('Notification')}>
+              <Image
+                source={require('../../src/core/ui/assets/images/arrow-back-black.png')}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        name="CheckRevision"
+        component={CheckRevision}
       />
 
       <Stack.Screen

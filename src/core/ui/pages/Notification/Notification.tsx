@@ -49,7 +49,11 @@ export default function Notification(): ReactElement {
           data={dataNotification}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <NotificationContent hour={item.hour} title={item.title} />
+            <NotificationContent
+              hour={item.hour}
+              title={item.title}
+              onPress={() => navigation.navigate('CheckRevision')}
+            />
           )}
           showsVerticalScrollIndicator={false}
         />
