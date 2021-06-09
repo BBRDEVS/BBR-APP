@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 export const Touch = styled.TouchableHighlight`
   width: 100%;
   border-radius: 8px;
+  padding: 0 5px;
 `;
 
 export const Container = styled.View`
@@ -22,11 +23,11 @@ export const Content = styled.View`
 `;
 
 export const TitleCategory = styled.Text`
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
 `;
 
 export const LeassonNumber = styled.Text`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 100;
 `;

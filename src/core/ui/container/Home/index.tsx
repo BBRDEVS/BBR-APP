@@ -105,7 +105,7 @@ export default function HomeContainer(): ReactElement {
             theme={item.theme}
             number={item.number}
             icon={item.icon}
-            onPress={() => navigation.navigate('LessionSelector')}
+            onPress={() => navigation.navigate('LessionSelector', {})}
           />
         )}
         showsVerticalScrollIndicator={false}

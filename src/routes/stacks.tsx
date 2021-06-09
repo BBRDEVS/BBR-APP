@@ -42,7 +42,7 @@ export function HomeStackNavigator({
           cardOverlayEnabled: false,
           headerTintColor: colors.blueDark,
           cardStyle: { backgroundColor: colors.white },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: { shadowColor: 'transparent', elevation: 0 },
           headerLeft: () => null,
         })}
         component={Home}
@@ -58,7 +58,7 @@ export function ChatStackNavigator(): ReactElement {
         name="Chat"
         options={() => ({
           cardStyle: { backgroundColor: colors.white },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: { shadowColor: 'transparent', elevation: 0 },
           cardOverlayEnabled: true,
           headerTintColor: colors.blueDark,
           headerLeft: () => null,
@@ -75,9 +75,9 @@ export function RevisionStackNavigator(): ReactElement {
       <Stack.Screen
         name="Revision"
         options={({ navigation }) => ({
-          title: 'Revisão',
+          title: 'Revisões',
           cardStyle: { backgroundColor: colors.white },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: { shadowColor: 'transparent', elevation: 0 },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
@@ -102,7 +102,7 @@ export function NotificationStackNavigator(): ReactElement {
         options={({ navigation }) => ({
           title: 'Notificações',
           cardStyle: { backgroundColor: colors.white },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: { shadowColor: 'transparent', elevation: 0 },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}

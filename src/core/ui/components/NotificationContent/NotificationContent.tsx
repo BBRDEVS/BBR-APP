@@ -13,10 +13,11 @@ import {
 export default function NotificationContent({
   title,
   hour,
+  onPress,
 }: NotificationContentProps): ReactElement {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Container>
+      <Container onPress={onPress}>
         <ContainerTextIntro>
           <TextInfo>{title}</TextInfo>
           <TextInfoHour>{hour}</TextInfoHour>
