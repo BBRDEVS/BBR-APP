@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { TouchableWithoutFeedback, Keyboard, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FormikProvider, useFormik } from 'formik';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../../data/context/AuthContext';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+//import Loading from '../../components/Loading';
 
 import { SignInrops } from './props';
 
@@ -25,9 +26,10 @@ import {
 
 export default function SignIn({}: SignInrops): ReactElement {
   const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
-    initialValues: { email: '', password: '' },
+    initialValues: { email: 'email@email.com', password: 'senha' },
 
     validationSchema: Yup.object().shape({
       email: Yup.string().required('Email é obrigatório'),
@@ -36,15 +38,21 @@ export default function SignIn({}: SignInrops): ReactElement {
 
     onSubmit: (values) => {
       console.log(values);
+
       navigation.navigate('MainHomeNavigation');
     },
   });
+
+  const navigateToResetPassword = useCallback(
+    () => navigation.navigate('ResetPasswordNavigation'),
+    [],
+  );
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Container>
         <ContainerTitle>
-          <Title>Olá,</Title>
+          <Title>Olá, 👋🏻</Title>
         </ContainerTitle>
 
         <ContainerSubtitle>
@@ -82,7 +90,7 @@ export default function SignIn({}: SignInrops): ReactElement {
           <Button title="Acessar" onPress={formik.handleSubmit} />
         </View>
 
-        <ContainerTextResetPassword>
+        <ContainerTextResetPassword onPress={navigateToResetPassword}>
           <TextResetPassword>Esqueci minha senha</TextResetPassword>
         </ContainerTextResetPassword>
       </Container>

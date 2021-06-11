@@ -17,7 +17,6 @@ export default function App(): ReactElement {
     <AppProvider>
       <NavigationContainer ref={navigationRef}>
         <StatusBar barStyle="dark-content" />
-
         <AppRoutes />
       </NavigationContainer>
     </AppProvider>

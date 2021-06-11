@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 import { FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { Container, Content, TitleCategory } from './styles';
 
 import LeassonsCarrouselComponent from 'core/ui/components/LeassonsCarrousel';
@@ -40,47 +42,48 @@ const leassons = [
 const selectTheme = [
   {
     id: 1,
-    theme: 'titulo da bagaça',
+    theme: 'Food and Drink',
     icon: 'hamburger',
     number: 1,
   },
   {
     id: 2,
-    theme: 'titulo da bagaça',
+    theme: 'Languages & Country',
     icon: 'hamburger',
     number: 2,
   },
   {
     id: 3,
-    theme: 'titulo da bagaça',
-    icon: 'hamburger',
+    theme: 'Personal Informations',
+    icon: 'apple',
     number: 3,
-  },
-  {
-    id: 4,
-    theme: 'titulo da bagaça',
-    icon: 'hamburger',
-    number: 4,
-  },
-  {
-    id: 5,
-    theme: 'titulo da bagaça',
-    icon: 'hamburger',
-    number: 5,
   },
 ];
 
 export default function HomeContainer(): ReactElement {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Content>
         <TitleCategory>Estudo por frases</TitleCategory>
-        <LeassonsCarrouselComponent items={leassons} />
+        <FlatList
+          data={leassons}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <LeassonsCarrouselComponent
+              onPress={() => navigation.navigate('LessionSelector', {})}
+              item={item}
+            />
+          )}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
       </Content>
+
       <Content>
         <TitleCategory>Estudo por frases</TitleCategory>
       </Content>
-
       <FlatList
         style={{ flex: 1 }}
         data={selectTheme}
@@ -90,6 +93,7 @@ export default function HomeContainer(): ReactElement {
             theme={item.theme}
             number={item.number}
             icon={item.icon}
+            onPress={() => navigation.navigate('LessionSelector', {})}
           />
         )}
         showsVerticalScrollIndicator={false}

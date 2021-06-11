@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
@@ -28,9 +28,8 @@ export default function Welcome(): ReactElement {
           <Logo source={logo} />
         </ContainerLogo>
 
-        <ContainerMen>
-          <TextHi>HI</TextHi>
-          <Men source={men} />
+        <ContainerMen source={men}>
+          <TextHi>Hi</TextHi>
         </ContainerMen>
 
         <ContainerTitle>

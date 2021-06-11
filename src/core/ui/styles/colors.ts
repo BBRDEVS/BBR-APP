@@ -1,6 +1,7 @@
 const colors = {
   bluePrimary: '#06397D',
   blueSecondary: '#00B3F1',
+  blueDark: '#09164F',
   red: '#FF004A',
   black: '#161A20',
   greyDark: '#666666',

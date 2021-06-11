@@ -1,28 +1,29 @@
 import styled from 'styled-components/native';
 
 export const Touch = styled.TouchableHighlight`
-  width: 100%;
-  border-radius: 8px
+  flex: 1;
+  border-radius: 8px;
 `;
 
 export const Container = styled.View`
   border-radius: 8px;
   height: 72px;
-  width: 100%;
-  margin-bottom: 10px;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-right: 32px;
-  padding-left: 32px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 7px 0;
+  align-items: center;
+  padding: 0 20px;
+`;
+
+export const ContainerTitle = styled.View`
+  flex: 1;
+  margin-left: 25px;
 `;
 
 export const Content = styled.View`
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
 export const TitleCategory = styled.Text`
