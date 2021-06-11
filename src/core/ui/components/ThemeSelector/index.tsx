@@ -9,6 +9,7 @@ import {
   TitleCategory,
   LeassonNumber,
   Touch,
+  ContainerTitle,
 } from './styles';
 
 export default function ThemeSelectorComponent({
@@ -23,10 +24,12 @@ export default function ThemeSelectorComponent({
         <Content>
           <Icon name={icon} size={25} color="#696969" />
         </Content>
-        <Content>
-          <TitleCategory>{theme}</TitleCategory>
-          <LeassonNumber>{`Lição ${number}`}</LeassonNumber>
-        </Content>
+        <ContainerTitle>
+          <Content>
+            <TitleCategory>{theme}</TitleCategory>
+            <LeassonNumber>{`Lição ${number}`}</LeassonNumber>
+          </Content>
+        </ContainerTitle>
         <Content>
           <Icon name="chevron-right" size={30} color="#696969" />
         </Content>

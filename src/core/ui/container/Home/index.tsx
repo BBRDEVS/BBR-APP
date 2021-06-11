@@ -48,27 +48,15 @@ const selectTheme = [
   },
   {
     id: 2,
-    theme: 'Food and Drink',
+    theme: 'Languages & Country',
     icon: 'hamburger',
     number: 2,
   },
   {
     id: 3,
-    theme: 'Food and Drink',
-    icon: 'hamburger',
+    theme: 'Personal Informations',
+    icon: 'apple',
     number: 3,
-  },
-  {
-    id: 4,
-    theme: 'Food and Drink',
-    icon: 'hamburger',
-    number: 4,
-  },
-  {
-    id: 5,
-    theme: 'Food and Drink',
-    icon: 'hamburger',
-    number: 5,
   },
 ];
 
