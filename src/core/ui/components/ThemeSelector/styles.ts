@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Touch = styled.TouchableHighlight`
-  width: 100%;
+  flex: 1;
   border-radius: 8px;
 `;
 
@@ -13,6 +13,11 @@ export const Container = styled.View`
   margin: 7px 0;
   align-items: center;
   padding: 0 20px;
+`;
+
+export const ContainerTitle = styled.View`
+  flex: 1;
+  margin-left: 25px;
 `;
 
 export const Content = styled.View`

@@ -10,6 +10,7 @@ import {
   TitleCategory,
   LeassonNumber,
   Touch,
+  ContainerTitle,
 } from './styles';
 import { View } from 'react-native';
 
@@ -39,11 +40,13 @@ export default function ThemeSelectorComponent({
           )}
         </Content>
 
-        <Content>
-          <TitleCategory>{theme}</TitleCategory>
-          {subtitle && <LeassonNumber>{subtitle}</LeassonNumber>}
-          {number && <LeassonNumber>{`Lição ${number}`}</LeassonNumber>}
-        </Content>
+        <ContainerTitle>
+          <Content>
+            <TitleCategory>{theme}</TitleCategory>
+            {subtitle && <LeassonNumber>{subtitle}</LeassonNumber>}
+            {number && <LeassonNumber>{`Lição ${number}`}</LeassonNumber>}
+          </Content>
+        </ContainerTitle>
 
         <Content>
           <Icon name="chevron-right" size={30} color="#696969" />

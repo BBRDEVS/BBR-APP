@@ -6,6 +6,11 @@ export const Touch = styled.TouchableHighlight`
   padding: 0 5px;
 `;
 
+export const ContainerTitle = styled.View`
+  flex: 1;
+  margin-left: 20px;
+`;
+
 export const Container = styled.View`
   border-radius: 8px;
   height: 72px;
