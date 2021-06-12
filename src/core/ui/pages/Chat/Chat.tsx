@@ -4,11 +4,12 @@ import { Text } from 'react-native';
 import { Container } from './styles';
 
 import { ChatProps } from './props';
+import SendMessageAreaComponent from 'core/ui/components/SendMessageArea';
 
 export default function Chat({}: ChatProps): ReactElement {
   return (
     <Container>
-      <Text>Chat</Text>
+      <SendMessageAreaComponent />
     </Container>
   );
 }
