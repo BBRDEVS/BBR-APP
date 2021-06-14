@@ -10,15 +10,18 @@ import AppRoutes from './src/routes';
 
 import { navigationRef } from './src/routes';
 
+import { RecoilRoot } from 'recoil';
 enableScreens();
 
 export default function App(): ReactElement {
   return (
-    <AppProvider>
-      <NavigationContainer ref={navigationRef}>
-        <StatusBar barStyle="dark-content" />
-        <AppRoutes />
-      </NavigationContainer>
-    </AppProvider>
+    <RecoilRoot>
+      <AppProvider>
+        <NavigationContainer ref={navigationRef}>
+          <StatusBar barStyle="dark-content" />
+          <AppRoutes />
+        </NavigationContainer>
+      </AppProvider>
+    </RecoilRoot>
   );
 }

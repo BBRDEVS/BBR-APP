@@ -29,7 +29,8 @@ export const SendMessageButton = styled.View`
     background: ${colors.blueSecondary};
     border-radius: 100px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
 `;
