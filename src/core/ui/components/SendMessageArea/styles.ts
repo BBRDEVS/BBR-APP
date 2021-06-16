@@ -7,20 +7,22 @@ export const Container = styled.View`
     padding-left: 16px;
     padding-right: 16px;
     align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
 `;
 export const InputText = styled.TextInput`
   border-width: 1px;
   background: ${colors.grayLight};
   border-color: ${colors.greyDark};
-  width: 100%;
   margin-top: 30px;
   padding-top: 8px;
   padding-left: 25px;
   padding-bottom: 8px;
   padding-right: 25px;
   border-radius: 16px;
-  width: 70%;
   margin-right: 8px;
+  border-radius: 8px;
+  width: 320px
 `;
 
 export const SendMessageButton = styled.View`

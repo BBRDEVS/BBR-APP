@@ -8,15 +8,19 @@ import SendMessageAreaComponent from 'core/ui/components/SendMessageArea';
 
 import { chatSelectorState } from 'core/data/atoms/selectors/chatSelectors';
 import { useRecoilValue } from 'recoil';
+import { ScrollView } from 'react-native-gesture-handler';
 
-export function BaloonMessage(props): ReactElement {
+export interface Title {
+  value: string
+}
+export function BaloonMessage(props: Title): ReactElement {
   return (
     <View style={{
       backgroundColor: '#09164F',
       height: 56,
       paddingLeft: 10,
       paddingRight: 10,
-      paddingTop: 5, 
+      paddingTop: 5,
       paddingBottom: 6,
       minWidth: 82,
       marginBottom: 32,
@@ -31,14 +35,14 @@ export function BaloonMessage(props): ReactElement {
   )
 };
 
-export function BaloonResponse(props): ReactElement {
+export function BaloonResponse(props: Title): ReactElement {
   return (
     <View style={{
       backgroundColor: '#F5F5F5',
       height: 56,
       paddingLeft: 10,
       paddingRight: 10,
-      paddingTop: 5, 
+      paddingTop: 5,
       paddingBottom: 6,
       minWidth: 82,
       marginBottom: 32,
@@ -55,22 +59,38 @@ export function BaloonResponse(props): ReactElement {
 export default function Chat({ }: ChatProps): ReactElement {
   const chat = useRecoilValue(chatSelectorState);
 
+  const fakeQuestions = [
+    { id: 1, question: 'Ao falarmos de comidas,em qual verbo você pensa?' },
+    { id: 2, question: 'Digite o nome de uma comida' },
+    { id: 3, question: 'Digite o nome de uma bebida' },
+  ]
+
   useEffect(() => {
-    console.log('MENSAGEM:', chat[0])
+    console.log('MENSAGEM:', chat)
   }, [chat])
 
   return (
     <Container>
-      {
-        chat[0] === undefined ? <View>
-          <BaloonResponse value={'Ao falarmos de comidas,em qual verbo você pensa?'} />
-        </View> : false
-      }
+      <ScrollView style={{ marginHorizontal: 20 }}>
+
+        {
+
+          fakeQuestions.map(ask =>
+            chat.map(item => {
+              if (item.id === ask.id) {
+                return (
+                  <View>
+                    <BaloonMessage value={ask.question} />
+                    <BaloonResponse value={item.message} />
+                  </View>
+                )
+              }
+            })
+          )
+        }
+      </ScrollView>
       <SendMessageAreaComponent />
-      {
-        chat.length !== 0 ? chat.map(message => <BaloonMessage value={message} />) : false
-      }
-    
+
     </Container>
   );
 }
