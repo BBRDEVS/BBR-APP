@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import NotificationContent from '../../components/NotificationContent';
 
+// @ts-ignore
 import cactus from '../../assets/images/cactus.png';
 
 import {
