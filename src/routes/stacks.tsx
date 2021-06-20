@@ -42,7 +42,11 @@ export function HomeStackNavigator({
           cardOverlayEnabled: false,
           headerTintColor: colors.blueDark,
           cardStyle: { backgroundColor: colors.white },
-          headerStyle: { shadowColor: 'transparent', elevation: 0 },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => null,
         })}
         component={Home}

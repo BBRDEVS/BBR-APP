@@ -39,7 +39,11 @@ export default function AppRoutes(): ReactElement {
         options={({ navigation }) => ({
           title: '',
           cardStyle: { backgroundColor: '#FFF' },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
@@ -64,7 +68,11 @@ export default function AppRoutes(): ReactElement {
         options={({ navigation }) => ({
           title: 'Food And Drink',
           cardStyle: { backgroundColor: '#FFF' },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
@@ -83,7 +91,11 @@ export default function AppRoutes(): ReactElement {
         options={({ navigation }) => ({
           title: 'Food And Drink',
           cardStyle: { backgroundColor: '#FFF' },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
@@ -102,7 +114,11 @@ export default function AppRoutes(): ReactElement {
         options={({ navigation }) => ({
           title: 'Food And Drink',
           cardStyle: { backgroundColor: '#FFF' },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
@@ -121,7 +137,11 @@ export default function AppRoutes(): ReactElement {
         options={({ navigation }) => ({
           title: 'Food And Drink',
           cardStyle: { backgroundColor: '#FFF' },
-          headerStyle: { shadowColor: 'transparent' },
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
           headerLeft: () => (
             <TouchableOpacity
               style={{ marginLeft: 20 }}
