@@ -12,6 +12,9 @@ import RevisionCorretionSelector from '../core/ui/pages/RevisionCorretionSelecto
 import RevisionCorretionTestSelector from '../core/ui/pages/RevisionCorretionTestSelector';
 import CheckRevision from '../core/ui/pages/CheckRevision';
 
+import Training from '../core/ui/pages/Training'
+import TrainingAudio from '../core/ui/pages/TrainingAudio'
+
 import { headerShownFalse } from './styles';
 
 import { MainBottomNavigator } from './bottomtabs';
@@ -23,6 +26,44 @@ const Stack = createStackNavigator();
 export default function AppRoutes(): ReactElement {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+          name="TrainingAudio"
+          options={({ navigation }) => ({
+            title: 'Food And Drink',
+            headerStyle: {
+              elevation: 0,
+            },
+            cardStyle: {
+              backgroundColor: colors.white
+            },
+            headerLeft: () => (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Image
+                      source={require('../../src/core/ui/assets/images/next.png')}
+                  />
+                </TouchableOpacity>
+            ),
+          })}
+          component={TrainingAudio}
+      />
+
+      <Stack.Screen
+          name="Training"
+          options={({ navigation }) => ({
+            title: 'Food And Drink',
+            headerTransparent: true,
+            headerTintColor: colors.white,
+            headerLeft: () => (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Image
+                      source={require('../../src/core/ui/assets/images/next.png')}
+                  />
+                </TouchableOpacity>
+            ),
+          })}
+          component={Training}
+      />
+
       <Stack.Screen
         name="Welcome"
         options={headerShownFalse}
@@ -196,6 +237,8 @@ export default function AppRoutes(): ReactElement {
         })}
         component={Introduction}
       />
+
+
     </Stack.Navigator>
   );
 }

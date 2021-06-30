@@ -89,6 +89,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RNAudioRecorderPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RNCMaskedView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -260,6 +265,11 @@
 			<false/>
 		</dict>
 		<key>react-native-splash-screen.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>rn-fetch-blob.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
