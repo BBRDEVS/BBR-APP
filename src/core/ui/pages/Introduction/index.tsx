@@ -32,7 +32,7 @@ export default function Introduction({ navigation }): ReactElement {
           </DescriptionHomeWork>
         </ContainerDetailsHomeWork>
 
-        <Button title="Próximo" onPress={() => {}} />
+        <Button title="Próximo" onPress={() => navigation.navigate('Chat')} />
       </ContainerHomeWork>
       <SafeAreaView />
     </Container>
