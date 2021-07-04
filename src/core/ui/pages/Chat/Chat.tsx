@@ -73,10 +73,7 @@ export default function Chat({ }: ChatProps): ReactElement {
               )
             })
           }
-
         </ScrollView>
-
-
           {
             countMessageUser < 4 
             ? <FormikProvider value={formik}>
