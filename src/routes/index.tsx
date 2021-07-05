@@ -20,6 +20,7 @@ import { headerShownFalse } from './styles';
 import { MainBottomNavigator } from './bottomtabs';
 import Introduction from 'core/ui/pages/Introduction';
 import colors from 'core/ui/styles/colors';
+import Chat from 'core/ui/pages/Chat';
 
 const Stack = createStackNavigator();
 
@@ -236,6 +237,23 @@ export default function AppRoutes(): ReactElement {
           ),
         })}
         component={Introduction}
+      />
+      
+      <Stack.Screen
+        name="Chat"
+        options={({ navigation }) => ({
+          title: 'Food And Drink',
+          headerTransparent: true,
+          headerTintColor: colors.black,
+          headerLeft: () => (
+            <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
+              <Image
+                source={require('../../src/core/ui/assets/images/arrow-back-black.png')}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+        component={Chat}
       />
 
 
